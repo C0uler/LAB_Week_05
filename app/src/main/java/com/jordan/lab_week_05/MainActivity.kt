@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
     }
 
         private fun getCatImageResponse() {
-        val call = catApiService.searchImages(1, "full")
+        val call = catApiService.searchImages(1, "full", 1)
 
         call.enqueue(object: Callback<List<ImageData>> {
             override fun onFailure(call: Call<List<ImageData>>, t: Throwable) {
