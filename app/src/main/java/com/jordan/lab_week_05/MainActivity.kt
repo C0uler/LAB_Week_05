@@ -30,7 +30,14 @@ class MainActivity : AppCompatActivity() {
         findViewById(R.id.api_response)
     }
 
-    private fun getCatImageResponse() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        getCatImageResponse()
+    }
+
+        private fun getCatImageResponse() {
         val call = catApiService.searchImages(1, "full")
         call.enqueue(object: Callback<String> {
             override fun onFailure(call: Call<String>, t: Throwable) {
